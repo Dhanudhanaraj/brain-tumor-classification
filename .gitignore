@@ -1,0 +1,12 @@
+__pycache__/
+.ipynb_checkpoints/
+.env
+
+# Model files (optional – keep if size is OK)
+*.h5
+*.keras
+
+# Generated files
+static/uploads/
+static/gradcam/
+static/reports/

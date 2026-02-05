@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diagnosis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>📊 Diagnosis Result</h1>
+
+    <div class="result">
+        {% for k, v in data.items() %}
+            <p><b>{{ k }}:</b> {{ v }}</p>
+        {% endfor %}
+    </div>
+
+    <h3>📍 Grad-CAM Tumor Localization</h3>
+    <img src="{{ url_for('static', filename='gradcam/' + gradcam) }}" alt="Grad-CAM">
+
+    <a class="download" href="{{ url_for('static', filename='reports/' + pdf) }}">
+        📄 Download PDF Report
+    </a>
+
+    <div class="footer">
+        ⚠️ Disclaimer: This system is for academic and research purposes only.
+    </div>
+</div>
+
+</body>
+</html>

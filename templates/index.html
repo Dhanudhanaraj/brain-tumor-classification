@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brain Tumor Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🧠 Brain Tumor Classification</h1>
+    <h3>Patient Information</h3>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label>Patient Name</label>
+        <input type="text" name="name" required>
+
+        <label>Age</label>
+        <input type="number" name="age" required>
+
+        <label>Gender</label>
+        <select name="gender">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+
+        <label>Upload MRI Image</label>
+        <input type="file" name="mri" required>
+
+        <button type="submit">Analyze MRI</button>
+    </form>
+
+    <div class="footer">
+        ⚠️ For academic and research purposes only
+    </div>
+</div>
+
+</body>
+</html>
