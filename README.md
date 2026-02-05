@@ -37,6 +37,7 @@ A **Flask-based web application** allows users to upload MRI images, enter patie
 
 ---
 ## System Architecture  
+
 ![system arc](https://github.com/user-attachments/assets/f4180e46-7e27-4eb4-b3a5-dbae3e0c4d4a)
 
 ---
@@ -136,15 +137,13 @@ heatmap = make_gradcam_heatmap(
 ## Output
 
 ### User Interface for Patient Data Entry and MRI Upload
-<img width="1913" height="973" alt="Screenshot 2026-02-05 134729" src="https://github.com/user-attachments/assets/505b095c-3f18-42f7-b432-e704d875a2ab" />
-
+<img width="635" height="584" alt="Screenshot 2026-02-05 135222" src="https://github.com/user-attachments/assets/52e2bf20-bb38-4e24-96ba-658a7b348f57" />
 
 ### Classification Result and Grad-CAM Visualization
 <img width="620" height="813" alt="Screenshot 2026-02-05 135137" src="https://github.com/user-attachments/assets/c047d4dc-8a7c-4d00-a13c-d086fb74153c" />
 
-
 ### Generated Medical PDF Report
-<img width="493" height="701" alt="Screenshot 2026-02-05 135154" src="https://github.com/user-attachments/assets/feff44ab-a053-4c8d-806c-337814d34b8d" />
+<img width="439" height="576" alt="Screenshot 2026-02-05 135154" src="https://github.com/user-attachments/assets/fd4bcd72-d1ea-4147-b0f2-053b7cd21e9d" />
 
 ---
 ## Future Enhancements
@@ -163,7 +162,5 @@ heatmap = make_gradcam_heatmap(
 [3] K. Zhou and X. Chen, “Explainable AI in Medical Image Analysis,” Medical Image Analysis, 2021.
 
 [4] M. Havaei et al., “Brain Tumor Segmentation with Deep Neural Networks,” Medical Image Analysis, 2017.
-
----
 
 ---
