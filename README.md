@@ -143,7 +143,7 @@ heatmap = make_gradcam_heatmap(
 <img width="620" height="813" alt="Screenshot 2026-02-05 135137" src="https://github.com/user-attachments/assets/c047d4dc-8a7c-4d00-a13c-d086fb74153c" />
 
 ### Generated Medical PDF Report
-<img width="439" height="576" alt="Screenshot 2026-02-05 135154" src="https://github.com/user-attachments/assets/fd4bcd72-d1ea-4147-b0f2-053b7cd21e9d" />
+<img width="439" height="561" alt="Screenshot 2026-02-05 135154" src="https://github.com/user-attachments/assets/e8bd907e-8329-40cf-864f-eccd2cf26a7b" />
 
 ---
 ## Future Enhancements
