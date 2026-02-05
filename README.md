@@ -33,9 +33,11 @@ A **Flask-based web application** allows users to upload MRI images, enter patie
 
 ## Development Requirements  
 
+<img width="643" height="658" alt="Screenshot 2026-02-05 132222" src="https://github.com/user-attachments/assets/5959a08d-32f8-4202-8a16-b6090ea811b2" />
 
+---
 ## System Architecture  
-2  
+![system arc](https://github.com/user-attachments/assets/f4180e46-7e27-4eb4-b3a5-dbae3e0c4d4a)
 
 ---
 
@@ -69,11 +71,23 @@ The final trained model was saved as:  `inceptionv3_best.keras`
 
 Evaluation metrics included: accuracy, precision, recall, F1-score, and confusion matrix.
 
+#### Classification Report
+
+<img width="532" height="274" alt="Screenshot 2026-02-05 132831" src="https://github.com/user-attachments/assets/5d4c1467-7a68-4ff3-8652-93e4c441476f" />
+
+#### Confusion Matrix
+
+<img width="654" height="588" alt="Screenshot 2026-02-05 132852" src="https://github.com/user-attachments/assets/68e7fa0f-ccd1-4653-9e96-c82074934c10" />
+
+#### Per-Class Accuracy
+
+<img width="284" height="106" alt="Screenshot 2026-02-05 132910" src="https://github.com/user-attachments/assets/32bae11d-ce23-4faa-b7ec-8fa60804121c" />
+
 The trained InceptionV3 model demonstrated reliable performance across all four tumor classes.
 
 ---
 
-#### Results  
+##### Results  
 
 The final deployed model achieved strong classification accuracy on the brain MRI dataset, effectively distinguishing between glioma, meningioma, pituitary tumors, and normal cases.
 
@@ -95,43 +109,51 @@ python app.py
 http://127.0.0.1:5000
 ```
 
-## Key Model Implementation Code
-```
-from tensorflow.keras.applications import InceptionV3
-from tensorflow.keras.layers import Dense, Dropout, GlobalAveragePooling2D
-from tensorflow.keras.models import Model
+--- 
 
-base_model = InceptionV3(
-    weights="imagenet",
-    include_top=False,
-    input_shape=(224, 224, 3)
+## Key Model Implementation Code
+
+```
+# Load trained model
+model = tf.keras.models.load_model("models/inceptionv3_best.keras")
+
+# Predict tumor class
+preds = model.predict(img_array)
+pred_index = int(np.argmax(preds))
+confidence = round(float(preds[0][pred_index]) * 100, 2)
+
+# Generate Grad-CAM heatmap
+heatmap = make_gradcam_heatmap(
+    img_array,
+    model,
+    last_conv_layer_name="mixed10",
+    pred_index=pred_index
 )
 
-base_model.trainable = False
-
-x = GlobalAveragePooling2D()(base_model.output)
-x = Dropout(0.5)(x)
-output = Dense(4, activation="softmax")(x)
-
-model = Model(inputs=base_model.input, outputs=output)
 ```
+
+---
 ## Output
 
-### Web-page asking for patient details and MRI image upload
+### User Interface for Patient Data Entry and MRI Upload
+<img width="1913" height="973" alt="Screenshot 2026-02-05 134729" src="https://github.com/user-attachments/assets/505b095c-3f18-42f7-b432-e704d875a2ab" />
 
-### Web-page result page
+
+### Classification Result and Grad-CAM Visualization
+<img width="620" height="813" alt="Screenshot 2026-02-05 135137" src="https://github.com/user-attachments/assets/c047d4dc-8a7c-4d00-a13c-d086fb74153c" />
 
 
+### Generated Medical PDF Report
+<img width="493" height="701" alt="Screenshot 2026-02-05 135154" src="https://github.com/user-attachments/assets/feff44ab-a053-4c8d-806c-337814d34b8d" />
+
+---
 ## Future Enhancements
-
-🔹 Fine-tuning InceptionV3 layers for improved accuracy
-
-🔹 Ensemble learning with EfficientNet or DenseNet 
  
 🔹 Store patient history using MongoDB or Firebase
 
 🔹 Cloud-based deployment for real-time inference
 
+---
 ## References
 
 [1] C. Szegedy et al., “Going Deeper with Convolutions,” IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2015.
@@ -139,3 +161,9 @@ model = Model(inputs=base_model.input, outputs=output)
 [2] R. R. Selvaraju et al., “Grad-CAM: Visual Explanations from Deep Networks,” ICCV, 2017.
 
 [3] K. Zhou and X. Chen, “Explainable AI in Medical Image Analysis,” Medical Image Analysis, 2021.
+
+[4] M. Havaei et al., “Brain Tumor Segmentation with Deep Neural Networks,” Medical Image Analysis, 2017.
+
+---
+
+---
