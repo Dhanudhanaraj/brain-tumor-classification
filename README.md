@@ -15,6 +15,12 @@ A **Flask-based web application** allows users to upload MRI images, enter patie
 
 ---
 
+## 🎥 Project Demo
+
+Watch the complete project demonstration on YouTube through the below attached link:
+
+https://youtu.be/sG_gh8D1x4w?si=e0AeklQ62vCFB_8i
+
 ## Features  
 
 📤 Upload brain MRI image  
@@ -88,11 +94,12 @@ The trained InceptionV3 model demonstrated reliable performance across all four 
 
 ---
 
-### Results  
+### Results
 
-The final deployed model achieved strong of 94% classification accuracy on the brain MRI dataset, effectively distinguishing between glioma, meningioma, pituitary tumors, and normal cases.
+The final model achieved **94% classification accuracy** on the brain MRI dataset, effectively distinguishing between **glioma, meningioma, pituitary tumor, and no-tumor cases**.
 
-This system supports automated brain tumor classification and provides visual explanations through Grad-CAM, which may assist in clinical research and academic analysis.
+The system performs automated brain tumor classification and provides **visual explanations using Grad-CAM**, which can support **academic research and analysis**.
+
 
 ---
 
