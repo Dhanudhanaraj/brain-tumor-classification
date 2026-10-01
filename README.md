@@ -88,9 +88,9 @@ The trained InceptionV3 model demonstrated reliable performance across all four 
 
 ---
 
-##### Results  
+### Results  
 
-The final deployed model achieved strong of 95% classification accuracy on the brain MRI dataset, effectively distinguishing between glioma, meningioma, pituitary tumors, and normal cases.
+The final deployed model achieved strong of 94% classification accuracy on the brain MRI dataset, effectively distinguishing between glioma, meningioma, pituitary tumors, and normal cases.
 
 This system supports automated brain tumor classification and provides visual explanations through Grad-CAM, which may assist in clinical research and academic analysis.
 
