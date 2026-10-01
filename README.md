@@ -1,4 +1,4 @@
-# TEAM.NO.49: An Intelligent System for Brain Tumor Classification Using MRI Scans
+# An Intelligent System for Brain Tumor Classification Using MRI Scans
 
 ## About  
 
@@ -90,7 +90,7 @@ The trained InceptionV3 model demonstrated reliable performance across all four 
 
 ##### Results  
 
-The final deployed model achieved strong classification accuracy on the brain MRI dataset, effectively distinguishing between glioma, meningioma, pituitary tumors, and normal cases.
+The final deployed model achieved strong of 95% classification accuracy on the brain MRI dataset, effectively distinguishing between glioma, meningioma, pituitary tumors, and normal cases.
 
 This system supports automated brain tumor classification and provides visual explanations through Grad-CAM, which may assist in clinical research and academic analysis.
 
@@ -101,7 +101,6 @@ This system supports automated brain tumor classification and provides visual ex
 #### Run the Flask Web App:  
 
 ```
-pip install -r requirements.txt
 python app.py
 ```
 
